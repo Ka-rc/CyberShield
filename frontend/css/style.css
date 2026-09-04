@@ -6,38 +6,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100vh;
-
     background: #0B1220;
-
     font-family: "Inter", sans-serif;
-
     position: relative;
     overflow: hidden;
 }
 
 body::before {
     content: "";
-
     position: absolute;
-
     width: 800px;
     height: 800px;
-
     top: 40%;
     left: 45%;
-
     transform: translate(-50%, -50%);
-
     background: rgba(37, 99, 235, .18);
-
     border-radius: 50%;
-
     filter: blur(180px);
-
     z-index: 0;
-
     pointer-events: none;
 }
 
@@ -48,17 +35,11 @@ body::before {
 
 .login-card {
     width: 430px;
-
     padding: 30px;
-
     background: #171C24;
-
     border-radius: 8px;
-
     box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
-
     text-align: center;
-
     position: relative;
     z-index: 1;
 }
@@ -70,22 +51,17 @@ body::before {
 
 h1 {
     margin-bottom: 8px;
-
     color: #F5F7FA;
-
     font-family: "Orbitron", sans-serif;
     font-size: 48px;
     font-weight: 700;
-
     letter-spacing: 1.5px;
 }
 
 p {
     margin-top: 0;
     margin-bottom: 40px;
-
     color: #C7CDD8;
-
     letter-spacing: 1.5px;
 }
 
@@ -96,13 +72,9 @@ p {
 
 label {
     display: block;
-
     margin-bottom: 8px;
-
     color: #D1D5DB;
-
     font-weight: 500;
-
     text-align: left;
 }
 
@@ -114,36 +86,26 @@ label {
 .input-container {
     display: flex;
     align-items: center;
-
     margin-bottom: 20px;
     padding: 0 14px;
-
     background: #0F141B;
-
     border: 1px solid transparent;
     border-radius: 12px;
-
     transition: .25s;
 }
 
 .input-container:focus-within {
     border-color: #2563EB;
-
     box-shadow: 0 0 8px rgba(37, 99, 235, .25);
 }
 
 .input-container input {
     flex: 1;
-
     padding: 14px 0;
-
     background: transparent;
-
     border: none;
     outline: none;
-
     color: #F5F7FA;
-
     font-size: 15px;
 }
 
@@ -159,9 +121,7 @@ label {
 .input-container i {
     width: 18px;
     height: 18px;
-
     color: #9CA3AF;
-
     flex-shrink: 0;
 }
 
@@ -178,46 +138,32 @@ label {
    MOSTRAR SENHA
 ========================================================== */
 
-.password-toggle{
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-left:12px;
-
-    width:20px;
-    height:20px;
-
-    color:#9CA3AF;
-
-    cursor:pointer;
-
+.password-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    width: 20px;
+    height: 20px;
+    color: #9CA3AF;
+    cursor: pointer;
     transition:
         color .2s ease,
         transform .15s ease;
-
-    user-select:none;
-
+    user-select: none;
 }
 
-.password-toggle:hover{
-
-    color:#F5F7FA;
-
+.password-toggle:hover {
+    color: #F5F7FA;
 }
 
-.password-toggle:active{
-
-    transform:scale(.9);
-
+.password-toggle:active {
+    transform: scale(.9);
 }
 
-.password-toggle svg{
-
-    width:20px;
-    height:20px;
-
+.password-toggle svg {
+    width: 20px;
+    height: 20px;
 }
 
 
@@ -232,19 +178,13 @@ label {
 
 button {
     width: 190px;
-
     padding: 16px;
-
     background: #2563EB;
-
     border: none;
     border-radius: 12px;
-
     color: #FFFFFF;
-
     font-size: 15px;
     font-weight: 600;
-
     transition:
         background .25s ease,
         transform .25s ease,
@@ -253,11 +193,8 @@ button {
 
 button:hover {
     background: #3B82F6;
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 20px rgba(37, 99, 235, .35);
-
     cursor: pointer;
 }
 
@@ -284,5 +221,4 @@ button:active {
     button {
         width: 100%;
     }
-
 }

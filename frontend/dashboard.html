@@ -1,102 +1,445 @@
-<body>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    <head>
-        <!-- Google Fonts -->
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         
-         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-         
-         <!-- CSS -->
-          <link rel="stylesheet" href="css/dashboard.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Dashboard</title>
 
+    <!-- ==========================================================
+         GOOGLE FONTS
+    =========================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ==========================================================
+         CSS
+    =========================================================== -->
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
-    <header>
-        <div class="logo">
-            
-            <h1>CyberShield</h1>
+<body>
 
+    <!-- ==========================================================
+         HEADER
+    ========================================================== -->
+    <header>
+
+        <!-- LOGO -->
+        <div class="logo">
+            <h1>CyberShield</h1>
         </div>
 
+        <!-- PESQUISA -->
         <div class="search">
-
             <div class="input-container">
-
                 <i data-lucide="search" aria-hidden="true"></i>
-
-                <input
-                id="search"
-                type="text"
-                placeholder="Pesquisar...">
-
+                <input id="search" type="text" placeholder="Pesquisar..." autocomplete="off">
             </div>
 
+            <!-- RESULTADOS DA PESQUISA -->
+            <div class="search-results" id="searchResults" hidden></div>
         </div>
 
+        <!-- PERFIL -->
         <div class="profile">
-            
+            <div class="profile-avatar">
+                <i data-lucide="user" aria-hidden="true"></i>
+            </div>
+
+            <div class="profile-info">
+                <span class="profile-name">Kaike</span>
+                <span class="profile-role">Administrador</span>
+            </div>
+
+            <i class="profile-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+
+            <!-- MENU DO PERFIL -->
+            <div class="profile-menu" id="profileMenu">
+                <a href="#"><i data-lucide="user"></i><span>Meu perfil</span></a>
+                <a href="#"><i data-lucide="settings"></i><span>Configurações</span></a>
+                <a href="#"><i data-lucide="shield-check"></i><span>Segurança da conta</span></a>
+                <a href="#"><i data-lucide="bell"></i><span>Notificações</span></a>
+                <a href="#" id="themeToggleBtn"><i data-lucide="moon"></i><span>Alternar tema</span></a>
+                <a href="#"><i data-lucide="help-circle"></i><span>Ajuda e suporte</span></a>
+                <hr class="profile-menu-divider">
+                <a href="#"><i data-lucide="log-out"></i><span>Sair</span></a>
+            </div>
         </div>
 
     </header>
 
+    <!-- ==========================================================
+         DASHBOARD
+    ========================================================== -->
     <div class="dashboard">
 
+        <!-- SIDEBAR -->
         <aside>
-            
             <nav>
-
                 <ul>
-
-                    <li>Dashboard</li>
-
-                    <li>Análises</li>
-
-                    <li>Dispositivos</li>
-
-                    <li>Vunerabilidades</li>
-
-                    <li>Relatórios</li>
-
-                    <li>Configurações</li>
-
+                    <li>
+                        <a href="#" class="active">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-lucide="scan-search"></i>
+                            <span>Análises</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-lucide="monitor"></i>
+                            <span>Dispositivos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-lucide="shield-alert"></i>
+                            <span>Vulnerabilidades</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-lucide="file-text"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-lucide="settings"></i>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
                 </ul>
-
             </nav>
-
         </aside>
 
+        <!-- CONTEÚDO PRINCIPAL -->
         <main>
 
+            <!-- BOAS-VINDAS -->
             <section class="welcome">
-
+                <div>
+                    <h2>Bem-vindo ao CyberShield, Kaike</h2>
+                    <p>Monitore e proteja seu ambiente de segurança.</p>
+                </div>
+                <button type="button">Nova Análise</button>
             </section>
 
+            <!-- ESTATÍSTICAS -->
             <section class="stats">
+                <article class="stat-card" data-searchable data-search-section="Estatísticas">
+                    <i data-lucide="monitor"></i>
+                    <div>
+                        <span>Dispositivos</span>
+                        <strong>24</strong>
+                    </div>
+                </article>
 
+                <article class="stat-card" data-searchable data-search-section="Estatísticas">
+                    <i data-lucide="shield-alert"></i>
+                    <div>
+                        <span>Vulnerabilidades</span>
+                        <strong>7</strong>
+                    </div>
+                </article>
+
+                <article class="stat-card" data-searchable data-search-section="Estatísticas">
+                    <i data-lucide="scan-search"></i>
+                    <div>
+                        <span>Análises realizadas</span>
+                        <strong id="analysisCount">42</strong>
+                    </div>
+                </article>
+
+                <article class="stat-card" data-searchable data-search-section="Estatísticas">
+                    <i data-lucide="shield-check"></i>
+                    <div>
+                        <span>Sistema</span>
+                        <strong>Seguro</strong>
+                    </div>
+                </article>
             </section>
 
+            <!-- ATIVIDADE RECENTE -->
             <section class="recent-activity">
+                <div class="section-header">
+                    <h2>Atividade recente</h2>
+                    <a href="#">Ver tudo</a>
+                </div>
 
+                <div class="activity-list">
+                    <div class="activity-item" data-searchable data-search-section="Atividade recente">
+                        <div class="activity-icon"><i data-lucide="scan-search"></i></div>
+                        <div class="activity-info">
+                            <strong>Análise de segurança concluída</strong>
+                            <span>Servidor principal analisado</span>
+                        </div>
+                        <time>Há 5 min</time>
+                    </div>
+
+                    <div class="activity-item" data-searchable data-search-section="Atividade recente">
+                        <div class="activity-icon"><i data-lucide="monitor-check"></i></div>
+                        <div class="activity-info">
+                            <strong>Novo dispositivo protegido</strong>
+                            <span>Estação de trabalho adicionada</span>
+                        </div>
+                        <time>Há 32 min</time>
+                    </div>
+
+                    <div class="activity-item" data-searchable data-search-section="Atividade recente">
+                        <div class="activity-icon"><i data-lucide="shield-check"></i></div>
+                        <div class="activity-info">
+                            <strong>Vulnerabilidade corrigida</strong>
+                            <span>Atualização de segurança aplicada</span>
+                        </div>
+                        <time>Há 1 h</time>
+                    </div>
+                </div>
             </section>
 
+            <!-- ALERTAS COM AÇÕES RÁPIDAS E TIMESTAMPS -->
             <section class="alerts">
+                <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+                    <h2>Alertas & Resposta a Incidentes</h2>
+                    
+                    <div class="filter-buttons" style="display: flex; gap: 6px; flex-wrap: wrap;">
+                        <button type="button" class="btn-filter active" data-filter="all" style="background: #2563EB; color: #FFF; border: none; padding: 6px 10px; border-radius: 6px; font-size: 12px; cursor: pointer;">Todos</button>
+                        <button type="button" class="btn-filter" data-filter="Média" style="background: #1F2937; color: #9CA3AF; border: 1px solid #374151; padding: 6px 10px; border-radius: 6px; font-size: 12px; cursor: pointer;">Média</button>
+                        <button type="button" class="btn-filter" data-filter="Alta" style="background: #1F2937; color: #9CA3AF; border: 1px solid #374151; padding: 6px 10px; border-radius: 6px; font-size: 12px; cursor: pointer;">Alta</button>
+                        <button type="button" class="btn-filter" data-filter="Crítica" style="background: #1F2937; color: #9CA3AF; border: 1px solid #374151; padding: 6px 10px; border-radius: 6px; font-size: 12px; cursor: pointer;">Crítica</button>
+                    </div>
+                </div>
 
+                <div class="alert-list">
+                    <!-- Alerta Crítico com Timestamp e Ação Rápida -->
+                    <div class="alert-item" data-searchable data-search-section="Alertas" style="border-left: 4px solid #DC2626; background: rgba(220, 38, 38, 0.03); display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 8px; margin-bottom: 12px; border-top: 1px solid #21262D; border-right: 1px solid #21262D; border-bottom: 1px solid #21262D;">
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%;">
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div class="alert-icon" style="color: #DC2626; margin-top: 2px;"><i data-lucide="alert-octagon"></i></div>
+                                <div class="alert-info">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
+                                        <strong style="color: #F5F7FA; font-size: 14px;">Comprometimento de credenciais root</strong>
+                                        <span style="font-size: 11px; color: #9CA3AF; background: #1F2937; padding: 1px 6px; border-radius: 4px;">26/08/2026 - 11:15</span>
+                                    </div>
+                                    <span style="font-size: 13px; color: #9CA3AF;">Atividade suspeita detectada no gateway principal (Brute Force IP externo)</span>
+                                </div>
+                            </div>
+                            <span class="alert-level" style="background: #DC2626; color: #FFFFFF; font-weight: 600; padding: 3px 8px; border-radius: 6px; font-size: 11px;">Crítica</span>
+                        </div>
+                        
+                        <!-- Barra de Ações de Resposta a Incidentes (IR) -->
+                        <div style="display: flex; gap: 8px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.05); justify-content: flex-end;">
+                            <button type="button" onclick="alert('Sessões root revogadas com sucesso.')" style="background: #1F2937; color: #F5F7FA; border: 1px solid #374151; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                                <i data-lucide="shield-off" style="width: 13px; height: 13px;"></i> Revogar Sessões
+                            </button>
+                            <button type="button" onclick="alert('Host isolado da rede interna com sucesso.')" style="background: #DC2626; color: #FFF; border: none; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 5px; font-weight: 500;">
+                                <i data-lucide="lock" style="width: 13px; height: 13px;"></i> Isolar Host
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Alerta Alto -->
+                    <div class="alert-item" data-searchable data-search-section="Alertas" style="display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 8px; background: #171C24; border: 1px solid #21262D; margin-bottom: 12px;">
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%;">
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div class="alert-icon" style="color: #F59E0B; margin-top: 2px;"><i data-lucide="shield-alert"></i></div>
+                                <div class="alert-info">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
+                                        <strong style="color: #F5F7FA; font-size: 14px;">Vulnerabilidade detectada</strong>
+                                        <span style="font-size: 11px; color: #9CA3AF; background: #1F2937; padding: 1px 6px; border-radius: 4px;">26/08/2026 - 10:40</span>
+                                    </div>
+                                    <span style="font-size: 13px; color: #9CA3AF;">Servidor WEB-01 requer atenção (CVE-2026-XXXX)</span>
+                                </div>
+                            </div>
+                            <span class="alert-level" style="background: #F59E0B; color: #111; font-weight: 600; padding: 3px 8px; border-radius: 6px; font-size: 11px;">Alta</span>
+                        </div>
+                        <div style="display: flex; gap: 8px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.05); justify-content: flex-end;">
+                            <button type="button" onclick="alert('Patch de segurança aplicado no WEB-01.')" style="background: #2563EB; color: #FFF; border: none; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 5px; font-weight: 500;">
+                                <i data-lucide="check-circle" style="width: 13px; height: 13px;"></i> Aplicar Patch
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Alerta Médio -->
+                    <div class="alert-item" data-searchable data-search-section="Alertas" style="display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 8px; background: #171C24; border: 1px solid #21262D;">
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%;">
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div class="alert-icon" style="color: #38BDF8; margin-top: 2px;"><i data-lucide="triangle-alert"></i></div>
+                                <div class="alert-info">
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
+                                        <strong style="color: #F5F7FA; font-size: 14px;">Atualização pendente</strong>
+                                        <span style="font-size: 11px; color: #9CA3AF; background: #1F2937; padding: 1px 6px; border-radius: 4px;">26/08/2026 - 09:00</span>
+                                    </div>
+                                    <span style="font-size: 13px; color: #9CA3AF;">3 dispositivos possuem atualizações de rotina disponíveis</span>
+                                </div>
+                            </div>
+                            <span class="alert-level medium" style="background: #38BDF8; color: #111; font-weight: 600; padding: 3px 8px; border-radius: 6px; font-size: 11px;">Média</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DISPOSITIVOS CONECTADOS COM AÇÕES DIRETAS -->
+            <section class="devices">
+                <div class="section-header">
+                    <h2>Dispositivos Monitorados</h2>
+                    <a href="#">Ver todos</a>
+                </div>
+
+                <div class="device-list">
+                    <div class="device-item" data-searchable data-search-section="Dispositivos" style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #171C24; border: 1px solid #21262D; border-radius: 8px; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="device-icon"><i data-lucide="server"></i></div>
+                            <div class="device-info">
+                                <strong style="color: #F5F7FA;">Servidor Principal (WEB-01)</strong>
+                                <span style="display: block; font-size: 12px; color: #9CA3AF;">IP: 192.168.1.10 · Varredura há 10 min</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span class="device-status warning" style="color: #F59E0B; background: rgba(245, 158, 11, 0.1); padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">Atenção</span>
+                            <button type="button" onclick="alert('Iniciando varredura profunda no WEB-01...')" style="background: #1F2937; color: #FFF; border: 1px solid #374151; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer;">Varredura Manual</button>
+                        </div>
+                    </div>
+
+                    <div class="device-item" data-searchable data-search-section="Dispositivos" style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #171C24; border: 1px solid #21262D; border-radius: 8px; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="device-icon"><i data-lucide="laptop"></i></div>
+                            <div class="device-info">
+                                <strong style="color: #F5F7FA;">Workstation Dev-04</strong>
+                                <span style="display: block; font-size: 12px; color: #9CA3AF;">IP: 192.168.1.45 · Varredura há 25 min</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span class="device-status" style="color: #34D399; background: rgba(52, 211, 153, 0.1); padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">Protegido</span>
+                            <button type="button" onclick="alert('Varredura manual iniciada para Dev-04.')" style="background: #1F2937; color: #FFF; border: 1px solid #374151; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer;">Varredura Manual</button>
+                        </div>
+                    </div>
+
+                    <div class="device-item" data-searchable data-search-section="Dispositivos" style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #171C24; border: 1px solid #21262D; border-radius: 8px; flex-wrap: wrap; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="device-icon"><i data-lucide="database"></i></div>
+                            <div class="device-info">
+                                <strong style="color: #F5F7FA;">Banco de Dados (DB-SQL)</strong>
+                                <span style="display: block; font-size: 12px; color: #9CA3AF;">IP: 192.168.1.88 · Varredura há 1 hora</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span class="device-status" style="color: #34D399; background: rgba(52, 211, 153, 0.1); padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">Protegido</span>
+                            <button type="button" onclick="alert('Varredura manual iniciada para DB-SQL.')" style="background: #1F2937; color: #FFF; border: 1px solid #374151; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer;">Varredura Manual</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RELATÓRIOS E AUDITORIA -->
+            <section class="reports-section" style="margin-top: 24px; background: #171C24; border: 1px solid #252C38; border-radius: 12px; padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h3 style="font-size: 15px; color: #F5F7FA; margin-bottom: 4px;">Relatórios de Conformidade & Auditoria</h3>
+                        <p style="font-size: 13px; color: #9CA3AF; margin: 0;">Gere e exporte logs consolidados de segurança para análise externa.</p>
+                    </div>
+                    <button type="button" id="exportReportBtn" class="btn-primary" style="display: flex; align-items: center; gap: 8px; background: #2563EB; color: #FFF; border: none; padding: 8px 16px; border-radius: 7px; font-size: 13px; font-weight: 500; cursor: pointer;">
+                        <i data-lucide="file-text"></i> Exportar Relatório (CSV)
+                    </button>
+                </div>
             </section>
 
         </main>
-
     </div>
 
-    <!-- Lucide -->
-<script src="https://unpkg.com/lucide@latest"></script>
+    <!-- ==========================================================
+         MODAL DO PERFIL
+    ========================================================== -->
+    <div class="modal-overlay" id="profileModal" hidden>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Gerenciamento de Conta</h3>
+                <button type="button" class="modal-close" id="closeModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
 
-<script>
-    lucide.createIcons();
-</script>
+            <div class="modal-body">
+                <div class="modal-profile-top">
+                    <div class="modal-avatar-large">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <div class="modal-user-intro">
+                        <strong>Kaike Ramos Cavalcante</strong>
+                        <span>ID: #SEC-8924 · SecOps Division</span>
+                    </div>
+                </div>
 
-<!-- JavaScript -->
-<script src="js/dashboard.js"></script>
+                <div class="modal-section-title">Informações Corporativas</div>
+
+                <div class="modal-grid">
+                    <div class="modal-field">
+                        <span>Cargo / Função</span>
+                        <strong>Administrador de Sistemas</strong>
+                    </div>
+                    <div class="modal-field">
+                        <span>Nível de Acesso</span>
+                        <strong>Root / Admin Geral</strong>
+                    </div>
+                </div>
+
+                <div class="modal-field">
+                    <span>E-mail Corporativo</span>
+                    <strong>kaike@cybershield.internal</strong>
+                </div>
+
+                <div class="modal-section-title">Sessão e Segurança</div>
+
+                <div class="modal-grid">
+                    <div class="modal-field">
+                        <span>Último Acesso</span>
+                        <strong>Hoje, 08:30 (São Paulo - BR)</strong>
+                    </div>
+                    <div class="modal-field">
+                        <span>Autenticação 2FA</span>
+                        <strong style="color: #34D399;">Ativada (Token)</strong>
+                    </div>
+                </div>
+
+                <div class="modal-password-box">
+                    <span>Alterar Credenciais</span>
+                    <button type="button" class="btn-secondary" id="changePasswordBtn">
+                        <i data-lucide="key"></i> Modificar Senha de Acesso
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-primary" id="saveModal">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================
+         CONTAINER DE NOTIFICAÇÕES TOAST
+    ========================================================== -->
+    <div id="toast-container"></div>
+
+    <!-- ==========================================================
+         LUCIDE SCRIPTS & INICIALIZAÇÃO
+    ========================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- ==========================================================
+         JAVASCRIPT DO DASHBOARD
+    =========================================================== -->
+    <script src="js/dashboard.js"></script>
 
 </body>
+
+</html>
