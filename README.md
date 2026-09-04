@@ -77,7 +77,7 @@ O CyberShield está atualmente em desenvolvimento e, neste momento, o projeto es
 
 ### 🌓 Tema claro
 
-O modo claro já está implementado na interface, porém **ainda está em processo de correção e refinamento**.
+O modo claro já está implementado na interface, porém **ainda está em processo de correção e aperfeiçoamento**.
 
 Alguns elementos visuais podem apresentar inconsistências no tema claro enquanto os ajustes de CSS e comportamento estão sendo realizados.
 
